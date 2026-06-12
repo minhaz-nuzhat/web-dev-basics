@@ -799,6 +799,275 @@ h3 { font-size: clamp(1.1rem, 1.7vw, 1.5rem); }
   pointer-events: none;
 }
 
+.shape-board {
+  position: relative;
+  min-height: 220px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #141418;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  background: #f3f0ea;
+  opacity: 0.92;
+}
+
+.shape-square { width: 56px; height: 56px; }
+.shape-rect { width: 88px; height: 18px; }
+.shape-pill { width: 96px; height: 18px; border-radius: 999px; }
+.shape-circle { width: 20px; height: 20px; border-radius: 50%; }
+.shape-ring {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 3px solid #f3f0ea;
+  background: transparent;
+}
+
+.affordance-board .affordance-main {
+  top: 20%;
+  left: 16%;
+  animation: affordanceGrow 2.4s ease-in-out infinite;
+}
+
+.affordance-board .affordance-pill {
+  top: 20%;
+  right: 12%;
+  animation: affordancePulse 2s ease-in-out infinite;
+}
+
+.affordance-board .affordance-dot {
+  bottom: 20%;
+  right: 20%;
+  animation: hotDot 900ms ease-in-out infinite alternate;
+}
+
+.affordance-board .affordance-rail {
+  bottom: 20%;
+  left: 14%;
+  width: 130px;
+  animation: railSweep 2.6s ease-in-out infinite;
+}
+
+.signifier-board .signifier-target {
+  top: 18%;
+  left: 16%;
+  animation: ringBlink 1.8s ease-in-out infinite;
+}
+
+.signifier-board .signifier-label {
+  bottom: 16%;
+  left: 18%;
+  width: 150px;
+  animation: labelSlide 2.3s ease-in-out infinite;
+}
+
+.shape-arrow {
+  position: absolute;
+  width: 64px;
+  height: 2px;
+  background: #f3f0ea;
+}
+
+.shape-arrow::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -4px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 10px solid #f3f0ea;
+}
+
+.signifier-board .arrow-a {
+  top: 34%;
+  left: 50%;
+  transform: rotate(-18deg);
+  animation: arrowNudge 1.6s ease-in-out infinite;
+}
+
+.signifier-board .arrow-b {
+  bottom: 30%;
+  right: 10%;
+  transform: rotate(160deg);
+  animation: arrowNudge 1.6s ease-in-out infinite reverse;
+}
+
+.constraints-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 14px;
+}
+
+.shape-cell {
+  min-height: 56px;
+  border: 1px solid rgba(243, 240, 234, 0.3);
+  background: rgba(243, 240, 234, 0.1);
+}
+
+.shape-cell.blocked {
+  background: rgba(239, 49, 85, 0.22);
+  border-color: rgba(239, 49, 85, 0.45);
+  animation: blockJolt 1.8s ease-in-out infinite;
+}
+
+.shape-cell.locked {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(239, 49, 85, 0.18) 0,
+    rgba(239, 49, 85, 0.18) 8px,
+    rgba(243, 240, 234, 0.06) 8px,
+    rgba(243, 240, 234, 0.06) 16px
+  );
+  border-color: rgba(239, 49, 85, 0.5);
+}
+
+.mapping-board {
+  display: grid;
+  grid-template-columns: 24px 1fr 24px;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+}
+
+.mapping-node {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f3f0ea;
+}
+
+.mapping-node.source { animation: nodeBlink 1.5s ease-in-out infinite; }
+.mapping-node.target { animation: nodeBlink 1.5s ease-in-out infinite 250ms; }
+
+.mapping-link {
+  position: relative;
+  height: 2px;
+  background: rgba(243, 240, 234, 0.36);
+  overflow: hidden;
+}
+
+.mapping-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 34%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(239, 49, 85, 0), rgba(239, 49, 85, 1), rgba(239, 49, 85, 0));
+  animation: mapFlow 1.3s ease-in-out infinite;
+}
+
+.feedback-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 14px;
+  align-items: center;
+}
+
+.feedback-orb {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background: rgba(243, 240, 234, 0.28);
+  border: 1px solid rgba(243, 240, 234, 0.32);
+}
+
+.feedback-orb.wait { animation: waitBlink 1.3s ease-in-out infinite; }
+.feedback-orb.active {
+  background: rgba(239, 49, 85, 0.58);
+  border-color: rgba(239, 49, 85, 0.9);
+  animation: activePulse 1.1s ease-in-out infinite;
+}
+.feedback-orb.done {
+  background: rgba(152, 214, 171, 0.45);
+  border-color: rgba(152, 214, 171, 0.85);
+  animation: donePop 1.8s ease-in-out infinite;
+}
+
+.feedback-bar {
+  grid-column: 1 / -1;
+  height: 4px;
+  background: rgba(243, 240, 234, 0.2);
+  overflow: hidden;
+  position: relative;
+}
+
+.feedback-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(239, 49, 85, 0), rgba(239, 49, 85, 0.95), rgba(239, 49, 85, 0));
+  animation: progressMove 1.8s linear infinite;
+}
+
+.model-board {
+  position: relative;
+  min-height: 220px;
+}
+
+.model-circle {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 1px solid rgba(243, 240, 234, 0.5);
+}
+
+.model-circle.user {
+  top: 28%;
+  left: 18%;
+  background: rgba(243, 240, 234, 0.14);
+  animation: circleDriftA 3.2s ease-in-out infinite;
+}
+
+.model-circle.system {
+  top: 28%;
+  right: 18%;
+  background: rgba(239, 49, 85, 0.18);
+  animation: circleDriftB 3.2s ease-in-out infinite;
+}
+
+.model-overlap {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  width: 62px;
+  height: 62px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(239, 49, 85, 0.44);
+  animation: overlapPulse 1.9s ease-in-out infinite;
+}
+
+.model-path {
+  position: absolute;
+  left: 16%;
+  right: 16%;
+  bottom: 20%;
+  height: 2px;
+  background: rgba(243, 240, 234, 0.26);
+}
+
+.model-path::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -14%;
+  width: 18%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(239, 49, 85, 0), rgba(239, 49, 85, 1), rgba(239, 49, 85, 0));
+  animation: pathFlow 2.2s ease-in-out infinite;
+}
+
 @keyframes sceneDrift {
   from { background-position: 0% 0%, 100% 100%, 50% 50%; }
   to { background-position: 8% -6%, 88% 94%, 50% 50%; }
@@ -850,6 +1119,82 @@ h3 { font-size: clamp(1.1rem, 1.7vw, 1.5rem); }
 @keyframes hotDot {
   from { transform: scale(1); box-shadow: 0 0 10px rgba(239, 49, 85, 0.45); }
   to { transform: scale(1.25); box-shadow: 0 0 16px rgba(239, 49, 85, 0.5); }
+}
+
+@keyframes affordanceGrow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes affordancePulse {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-8px); }
+}
+
+@keyframes railSweep {
+  0%, 100% { transform: scaleX(0.72); transform-origin: left; }
+  50% { transform: scaleX(1); transform-origin: left; }
+}
+
+@keyframes ringBlink {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes labelSlide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+@keyframes arrowNudge {
+  0%, 100% { transform: translateX(0) rotate(-18deg); }
+  50% { transform: translateX(6px) rotate(-18deg); }
+}
+
+@keyframes nodeBlink {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes waitBlink {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes activePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes donePop {
+  0%, 100% { transform: scale(1); }
+  20% { transform: scale(0.9); }
+  45% { transform: scale(1.12); }
+}
+
+@keyframes progressMove {
+  0% { left: -20%; }
+  100% { left: 110%; }
+}
+
+@keyframes circleDriftA {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(8px); }
+}
+
+@keyframes circleDriftB {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-8px); }
+}
+
+@keyframes overlapPulse {
+  0%, 100% { transform: translateX(-50%) scale(0.86); }
+  50% { transform: translateX(-50%) scale(1.08); }
+}
+
+@keyframes pathFlow {
+  0% { left: -14%; }
+  100% { left: 102%; }
 }
 
 @keyframes beamPass {

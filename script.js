@@ -140,11 +140,12 @@ function renderType(clip) {
   if (clip.type === 'affordance') {
     return `
       <div class="stack motion-affordance">
-        <article class="question-strip"><span class="question-digit">A</span><div><strong>What can I do here?</strong><p>Make actions feel clickable or draggable by design.</p></div></article>
-        <div class="affordance-stack">
-          <div class="affordance-button"><span>Book a call</span><span class="dot"></span></div>
-          <div class="affordance-button"><span>Open case study</span><span class="dot"></span></div>
-          <div class="affordance-button"><span>Play demo</span><span class="dot"></span></div>
+        <article class="question-strip"><span class="question-digit">A</span><div><strong>What can I do here?</strong><p>Shape language implies interaction possibilities.</p></div></article>
+        <div class="shape-board affordance-board">
+          <div class="shape shape-square affordance-main"></div>
+          <div class="shape shape-pill affordance-pill"></div>
+          <div class="shape shape-circle affordance-dot"></div>
+          <div class="shape shape-rect affordance-rail"></div>
         </div>
       </div>
     `;
@@ -153,11 +154,12 @@ function renderType(clip) {
   if (clip.type === 'signifiers') {
     return `
       <div class="stack motion-signifiers">
-        <article class="question-strip"><span class="question-digit">S</span><div><strong>Where do I click?</strong><p>Labels, arrows, and cues remove guessing.</p></div></article>
-        <div class="signifier-stack">
-          <div class="signifier-mark">Primary CTA label</div>
-          <div class="signifier-mark">Hover cue + arrow</div>
-          <div class="signifier-mark">Section jump indicator</div>
+        <article class="question-strip"><span class="question-digit">S</span><div><strong>Where do I click?</strong><p>Cues point attention to intended action zones.</p></div></article>
+        <div class="shape-board signifier-board">
+          <div class="shape shape-ring signifier-target"></div>
+          <div class="shape-arrow arrow-a"></div>
+          <div class="shape-arrow arrow-b"></div>
+          <div class="shape shape-pill signifier-label"></div>
         </div>
       </div>
     `;
@@ -166,12 +168,18 @@ function renderType(clip) {
   if (clip.type === 'constraints') {
     return `
       <div class="stack motion-constraints">
-        <article class="constraint-grid">
-          <div class="constraint-item"><strong>Valid email</strong><p>name@domain.com</p></div>
-          <div class="constraint-item disabled"><strong>Submit</strong><p>Disabled until form valid</p></div>
-          <div class="constraint-item locked"><strong>Password policy</strong><p>8+ chars + symbol required</p></div>
-          <div class="constraint-item"><strong>Date picker</strong><p>Blocks past dates</p></div>
-        </article>
+        <article class="question-strip"><span class="question-digit">C</span><div><strong>What is blocked?</strong><p>Boundaries prevent invalid moves.</p></div></article>
+        <div class="shape-board constraints-board">
+          <div class="shape-cell open"></div>
+          <div class="shape-cell blocked"></div>
+          <div class="shape-cell open"></div>
+          <div class="shape-cell locked"></div>
+          <div class="shape-cell blocked"></div>
+          <div class="shape-cell open"></div>
+          <div class="shape-cell open"></div>
+          <div class="shape-cell locked"></div>
+          <div class="shape-cell open"></div>
+        </div>
       </div>
     `;
   }
@@ -179,12 +187,15 @@ function renderType(clip) {
   if (clip.type === 'mapping') {
     return `
       <div class="stack">
-        <article class="mapping-grid">
-          <div class="mapping-row"><strong>Opacity</strong><span class="mapping-line"></span><span class="mapping-knob"></span></div>
-          <div class="mapping-row"><strong>Card size</strong><span class="mapping-line"></span><span class="mapping-knob"></span></div>
-          <div class="mapping-row"><strong>Volume</strong><span class="mapping-line"></span><span class="mapping-knob"></span></div>
-          <div class="mapping-row"><strong>Theme</strong><span class="mapping-line"></span><span class="mapping-knob"></span></div>
-        </article>
+        <article class="question-strip"><span class="question-digit">M</span><div><strong>Control to outcome</strong><p>Movement in one region maps to another.</p></div></article>
+        <div class="shape-board mapping-board">
+          <div class="mapping-node source"></div>
+          <div class="mapping-link"></div>
+          <div class="mapping-node target"></div>
+          <div class="mapping-node source"></div>
+          <div class="mapping-link"></div>
+          <div class="mapping-node target"></div>
+        </div>
       </div>
     `;
   }
@@ -192,10 +203,13 @@ function renderType(clip) {
   if (clip.type === 'feedback') {
     return `
       <div class="stack motion-feedback">
-        <article class="feedback-grid">
-          <div class="feedback-row waiting"><strong>Upload in progress</strong><p>System is processing your action.</p><span class="feedback-pill run">Running</span></div>
-          <div class="feedback-row success"><strong>Saved successfully</strong><p>User gets immediate confirmation.</p><span class="feedback-pill ok">Success</span></div>
-        </article>
+        <article class="question-strip"><span class="question-digit">F</span><div><strong>What happened?</strong><p>System state should visibly change after action.</p></div></article>
+        <div class="shape-board feedback-board">
+          <div class="feedback-orb wait"></div>
+          <div class="feedback-orb active"></div>
+          <div class="feedback-orb done"></div>
+          <div class="feedback-bar"></div>
+        </div>
       </div>
     `;
   }
@@ -203,12 +217,13 @@ function renderType(clip) {
   if (clip.type === 'model') {
     return `
       <div class="stack">
-        <article class="model-grid">
-          <div class="model-step"><strong>User intent</strong><p>Find pricing fast</p></div>
-          <div class="model-step"><strong>Expected action</strong><p>Tap pricing in nav</p></div>
-          <div class="model-step"><strong>System behavior</strong><p>Jump to clear pricing table</p></div>
-          <div class="model-step"><strong>Mental alignment</strong><p>No surprise, no confusion</p></div>
-        </article>
+        <article class="question-strip"><span class="question-digit">CM</span><div><strong>Mental model alignment</strong><p>User expectation and system behavior should overlap.</p></div></article>
+        <div class="shape-board model-board">
+          <div class="model-circle user"></div>
+          <div class="model-circle system"></div>
+          <div class="model-overlap"></div>
+          <div class="model-path"></div>
+        </div>
       </div>
     `;
   }
@@ -220,13 +235,13 @@ function renderType(clip) {
           <div class="terminal-card-top"><span></span><span></span><span></span></div>
           <pre>Build a mobile-first landing page for founders.
 
-Use these design constraints:
-- Affordance: CTA buttons must look clickable
-- Signifiers: arrows + labels for all actions
-- Constraints: disable submit on invalid inputs
-- Mapping: controls map clearly to effects
-- Feedback: success/error states on every action
-- Conceptual model: nav labels match user expectations
+Use design principles:
+- Affordance: clickable CTA shapes
+- Signifiers: directional cues
+- Constraints: invalid states blocked
+- Mapping: controls map to outcome
+- Feedback: immediate state response
+- Conceptual model: expected IA labels
 
 No code yet. Return UX plan first.</pre>
         </article>
