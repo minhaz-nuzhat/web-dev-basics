@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reel Visual Toolkit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <main class="app-shell">
+    <header class="hero">
+      <p class="eyebrow">AI agent-assisted interface design</p>
+      <h1>10 reel clips, one phone screen at a time.</h1>
+      <p class="hero-copy">
+        Each scene is a visual explainer you can record on phone format: teach the guideline, then tell developers exactly how to include it in AI prompts.
+      </p>
+    </header>
+
+    <section class="reel-studio">
+      <aside class="control-panel">
+        <div class="panel-block">
+          <p class="eyebrow">Capture workflow</p>
+          <p class="panel-copy">Choose a clip, record the phone frame, move to the next. Each clip has its own animation treatment.</p>
+        </div>
+
+        <div class="panel-block controls-row">
+          <button class="control-button" id="prevButton" type="button">Prev</button>
+          <button class="control-button control-button-primary" id="autoplayButton" type="button">Autoplay</button>
+          <button class="control-button" id="nextButton" type="button">Next</button>
+        </div>
+
+        <div class="panel-block status-row">
+          <span id="clipCounter">01 / 10</span>
+          <span>9:16 stage</span>
+        </div>
+
+        <div class="clip-list" id="clipList" aria-label="Clip list"></div>
+      </aside>
+
+      <section class="preview-panel">
+        <div class="phone-shell">
+          <div class="phone-shell-top">
+            <span></span><span></span><span></span>
+            <p>reel_capture.mode</p>
+          </div>
+          <div class="clip-viewport" id="clipViewport"></div>
+        </div>
+
+        <div class="clip-meta">
+          <p class="eyebrow" id="clipKicker">Opening frame</p>
+          <h2 id="clipTitle">You can tell AI to build your website from scratch.</h2>
+          <p class="hero-copy" id="clipNote">Slow zoom opener built for the first spoken line.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
