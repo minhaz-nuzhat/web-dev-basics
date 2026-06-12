@@ -24,8 +24,8 @@ const clips = [
     nav: 'Affordance',
     kicker: 'Norman principle',
     title: 'Affordance',
-    body: 'The design should suggest what actions are possible.',
-    note: 'Visual: clearly clickable controls with tactile depth.',
+    body: 'A raised "Book a call" button communicates clickability better than plain text in body copy.',
+    note: 'Concrete cue: button depth + contrast signals action.',
     type: 'affordance'
   },
   {
@@ -33,8 +33,8 @@ const clips = [
     nav: 'Signifiers',
     kicker: 'Norman principle',
     title: 'Signifiers',
-    body: 'Visible cues should show where and how to act.',
-    note: 'Visual: arrows, labels, and active cues point to actions.',
+    body: 'A label like "Primary CTA" plus an arrow cue removes guessing about where to click next.',
+    note: 'Concrete cue: labels + arrows + highlighted target.',
     type: 'signifiers'
   },
   {
@@ -51,8 +51,8 @@ const clips = [
     nav: 'Mapping',
     kicker: 'Norman principle',
     title: 'Mapping',
-    body: 'Controls should feel naturally connected to their outcomes.',
-    note: 'Visual: control-to-result pairs animate in sync.',
+    body: 'When a slider moves right and the card grows, users instantly understand control-to-result mapping.',
+    note: 'Concrete cue: direction of control matches visible outcome.',
     type: 'mapping'
   },
   {
@@ -60,8 +60,8 @@ const clips = [
     nav: 'Feedback',
     kicker: 'Norman principle',
     title: 'Feedback',
-    body: 'The system should immediately show what happened after action.',
-    note: 'Visual: waiting and success states communicate system response.',
+    body: 'After submit, show "Uploading..." then "Saved successfully" so users never wonder if action worked.',
+    note: 'Concrete cue: loading state followed by success confirmation.',
     type: 'feedback'
   },
   {
@@ -69,8 +69,8 @@ const clips = [
     nav: 'Conceptual Model',
     kicker: 'Norman principle',
     title: 'Conceptual Model',
-    body: 'The interface should match how the user thinks it works.',
-    note: 'Visual: expected user path represented as a simple mental model.',
+    body: 'If users look for "Pricing" but nav says "Monetization matrix," their mental model breaks.',
+    note: 'Concrete cue: use user vocabulary in labels and IA.',
     type: 'model'
   },
   {
