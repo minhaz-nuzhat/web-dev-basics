@@ -141,11 +141,18 @@ function renderType(clip) {
     return `
       <div class="stack motion-affordance">
         <article class="question-strip"><span class="question-digit">A</span><div><strong>What can I do here?</strong><p>Shape language implies interaction possibilities.</p></div></article>
-        <div class="shape-board affordance-board">
-          <div class="shape shape-square affordance-main"></div>
-          <div class="shape shape-pill affordance-pill"></div>
-          <div class="shape shape-circle affordance-dot"></div>
-          <div class="shape shape-rect affordance-rail"></div>
+        <div class="hybrid-grid">
+          <div class="shape-board affordance-board">
+            <div class="shape shape-square affordance-main"></div>
+            <div class="shape shape-pill affordance-pill"></div>
+            <div class="shape shape-circle affordance-dot"></div>
+            <div class="shape shape-rect affordance-rail"></div>
+          </div>
+          <div class="principle-ui">
+            <div class="ui-card raised"><span>Book a call</span><b>●</b></div>
+            <div class="ui-card flat"><span>Plain text label</span><b>·</b></div>
+            <p class="ui-note">Raised and contrasted controls communicate clickability.</p>
+          </div>
         </div>
       </div>
     `;
@@ -155,11 +162,18 @@ function renderType(clip) {
     return `
       <div class="stack motion-signifiers">
         <article class="question-strip"><span class="question-digit">S</span><div><strong>Where do I click?</strong><p>Cues point attention to intended action zones.</p></div></article>
-        <div class="shape-board signifier-board">
-          <div class="shape shape-ring signifier-target"></div>
-          <div class="shape-arrow arrow-a"></div>
-          <div class="shape-arrow arrow-b"></div>
-          <div class="shape shape-pill signifier-label"></div>
+        <div class="hybrid-grid">
+          <div class="shape-board signifier-board">
+            <div class="shape shape-ring signifier-target"></div>
+            <div class="shape-arrow arrow-a"></div>
+            <div class="shape-arrow arrow-b"></div>
+            <div class="shape shape-pill signifier-label"></div>
+          </div>
+          <div class="principle-ui">
+            <div class="ui-row"><span class="ui-tag">Primary CTA</span><span class="ui-arrow">→</span></div>
+            <div class="ui-row"><span class="ui-tag">Next section</span><span class="ui-arrow">→</span></div>
+            <p class="ui-note">Labels and arrows remove ambiguity about next action.</p>
+          </div>
         </div>
       </div>
     `;
@@ -169,16 +183,24 @@ function renderType(clip) {
     return `
       <div class="stack motion-constraints">
         <article class="question-strip"><span class="question-digit">C</span><div><strong>What is blocked?</strong><p>Boundaries prevent invalid moves.</p></div></article>
-        <div class="shape-board constraints-board">
-          <div class="shape-cell open"></div>
-          <div class="shape-cell blocked"></div>
-          <div class="shape-cell open"></div>
-          <div class="shape-cell locked"></div>
-          <div class="shape-cell blocked"></div>
-          <div class="shape-cell open"></div>
-          <div class="shape-cell open"></div>
-          <div class="shape-cell locked"></div>
-          <div class="shape-cell open"></div>
+        <div class="hybrid-grid">
+          <div class="shape-board constraints-board">
+            <div class="shape-cell open"></div>
+            <div class="shape-cell blocked"></div>
+            <div class="shape-cell open"></div>
+            <div class="shape-cell locked"></div>
+            <div class="shape-cell blocked"></div>
+            <div class="shape-cell open"></div>
+            <div class="shape-cell open"></div>
+            <div class="shape-cell locked"></div>
+            <div class="shape-cell open"></div>
+          </div>
+          <div class="principle-ui">
+            <div class="form-line invalid">Email format invalid</div>
+            <div class="form-line valid">Password meets policy</div>
+            <button class="ui-submit" type="button" disabled>Submit disabled</button>
+            <p class="ui-note">Invalid states block progression before user error spreads.</p>
+          </div>
         </div>
       </div>
     `;
@@ -188,13 +210,20 @@ function renderType(clip) {
     return `
       <div class="stack">
         <article class="question-strip"><span class="question-digit">M</span><div><strong>Control to outcome</strong><p>Movement in one region maps to another.</p></div></article>
-        <div class="shape-board mapping-board">
-          <div class="mapping-node source"></div>
-          <div class="mapping-link"></div>
-          <div class="mapping-node target"></div>
-          <div class="mapping-node source"></div>
-          <div class="mapping-link"></div>
-          <div class="mapping-node target"></div>
+        <div class="hybrid-grid">
+          <div class="shape-board mapping-board">
+            <div class="mapping-node source"></div>
+            <div class="mapping-link"></div>
+            <div class="mapping-node target"></div>
+            <div class="mapping-node source"></div>
+            <div class="mapping-link"></div>
+            <div class="mapping-node target"></div>
+          </div>
+          <div class="principle-ui">
+            <div class="mapping-ui-row"><span>Slider left</span><div class="mapping-ui-bar"><i></i></div><span>Card shrinks</span></div>
+            <div class="mapping-ui-row"><span>Slider right</span><div class="mapping-ui-bar"><i></i></div><span>Card grows</span></div>
+            <p class="ui-note">Users should predict outcome from control direction.</p>
+          </div>
         </div>
       </div>
     `;
@@ -204,11 +233,19 @@ function renderType(clip) {
     return `
       <div class="stack motion-feedback">
         <article class="question-strip"><span class="question-digit">F</span><div><strong>What happened?</strong><p>System state should visibly change after action.</p></div></article>
-        <div class="shape-board feedback-board">
-          <div class="feedback-orb wait"></div>
-          <div class="feedback-orb active"></div>
-          <div class="feedback-orb done"></div>
-          <div class="feedback-bar"></div>
+        <div class="hybrid-grid">
+          <div class="shape-board feedback-board">
+            <div class="feedback-orb wait"></div>
+            <div class="feedback-orb active"></div>
+            <div class="feedback-orb done"></div>
+            <div class="feedback-bar"></div>
+          </div>
+          <div class="principle-ui">
+            <div class="status-chip running">Uploading...</div>
+            <div class="status-chip success">Saved successfully</div>
+            <div class="status-chip quiet">No response = confusion</div>
+            <p class="ui-note">Always acknowledge action with explicit system response.</p>
+          </div>
         </div>
       </div>
     `;
@@ -218,11 +255,19 @@ function renderType(clip) {
     return `
       <div class="stack">
         <article class="question-strip"><span class="question-digit">CM</span><div><strong>Mental model alignment</strong><p>User expectation and system behavior should overlap.</p></div></article>
-        <div class="shape-board model-board">
-          <div class="model-circle user"></div>
-          <div class="model-circle system"></div>
-          <div class="model-overlap"></div>
-          <div class="model-path"></div>
+        <div class="hybrid-grid">
+          <div class="shape-board model-board">
+            <div class="model-circle user"></div>
+            <div class="model-circle system"></div>
+            <div class="model-overlap"></div>
+            <div class="model-path"></div>
+          </div>
+          <div class="principle-ui">
+            <div class="expectation-row"><strong>User expects</strong><span>Pricing</span></div>
+            <div class="expectation-row mismatch"><strong>System label</strong><span>Monetization matrix</span></div>
+            <div class="expectation-row"><strong>Aligned label</strong><span>Pricing</span></div>
+            <p class="ui-note">Naming and IA should match user vocabulary.</p>
+          </div>
         </div>
       </div>
     `;
