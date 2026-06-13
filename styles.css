@@ -799,6 +799,120 @@ h3 { font-size: clamp(1.1rem, 1.7vw, 1.5rem); }
   pointer-events: none;
 }
 
+.intro-card .intro-lines {
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.intro-card h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.intro-card p {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.generated-board,
+.planned-board {
+  padding: 14px;
+}
+
+.generated-board {
+  display: grid;
+  gap: 10px;
+}
+
+.gen-strip {
+  height: 22px;
+  border: 1px solid var(--line);
+  background: rgba(243, 240, 234, 0.08);
+  animation: genLoop 1.6s ease-in-out infinite;
+}
+
+.gen-strip:nth-child(2) { animation-delay: 140ms; }
+.gen-strip:nth-child(3) { animation-delay: 280ms; }
+.gen-strip:nth-child(4) { animation-delay: 420ms; }
+.gen-strip:nth-child(5) { animation-delay: 560ms; }
+
+.planned-board {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.plan-hero {
+  height: 88px;
+  border: 1px solid rgba(239, 49, 85, 0.4);
+  background: radial-gradient(circle at 30% 40%, rgba(239, 49, 85, 0.35), rgba(18, 18, 20, 0.9));
+  animation: plannedPulse 2.1s ease-in-out infinite;
+}
+
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.plan-grid span {
+  min-height: 56px;
+  border: 1px solid var(--line);
+  background: rgba(243, 240, 234, 0.07);
+  animation: plannedRise 2s ease-in-out infinite;
+}
+
+.plan-grid span:nth-child(2) { animation-delay: 180ms; }
+.plan-grid span:nth-child(3) { animation-delay: 360ms; }
+
+.plan-line {
+  height: 3px;
+  background: linear-gradient(90deg, rgba(239, 49, 85, 0), rgba(239, 49, 85, 1), rgba(239, 49, 85, 0));
+  animation: planSweep 2.3s linear infinite;
+}
+
+.scene-norman-list .definition-card,
+.scene-foundations-list .terminal-card,
+.scene-standards-line .definition-card,
+.scene-intro .intro-card {
+  animation: cardLift 2.4s ease-in-out infinite;
+}
+
+.scene-norman-list .definition-card:nth-child(2),
+.scene-standards-line .definition-card:nth-child(2) { animation-delay: 140ms; }
+.scene-norman-list .definition-card:nth-child(3),
+.scene-standards-line .definition-card:nth-child(3) { animation-delay: 280ms; }
+.scene-norman-list .definition-card:nth-child(4),
+.scene-standards-line .definition-card:nth-child(4) { animation-delay: 420ms; }
+
+@keyframes genLoop {
+  0%, 100% { opacity: 0.35; transform: scaleX(0.94); }
+  50% { opacity: 0.9; transform: scaleX(1); }
+}
+
+@keyframes plannedPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+@keyframes plannedRise {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes planSweep {
+  0% { transform: translateX(-35%); }
+  100% { transform: translateX(35%); }
+}
+
+@keyframes cardLift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
 .shape-board {
   position: relative;
   min-height: 220px;

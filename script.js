@@ -1,95 +1,112 @@
 const clips = [
   {
     number: '01',
-    nav: 'Hook',
-    kicker: 'Why this matters',
-    title: 'AI can build your interface.',
-    subtitle: 'It will not guess your design intent.',
-    body: 'These guidelines are your language for directing the model instead of hoping it reads your mind.',
-    note: 'Open with this to frame principles as practical prompt inputs.',
-    type: 'quote'
+    nav: 'Intro',
+    kicker: 'Identity frame',
+    title: 'Nuzhat Minhaz',
+    subtitle: 'Product @ Apps & Agents Platform Observability',
+    body: 'Microsoft CoreAI, Developer Division',
+    note: 'Use as your opening personal credibility card.',
+    type: 'intro'
   },
   {
     number: '02',
-    nav: 'Guidelines',
-    kicker: 'Developer responsibility',
-    title: 'Know the guideline, then tell the AI.',
-    body: 'If your prompt only says build outcome x, you get generic structure. If your prompt includes design guidelines, you get direction.',
-    note: 'Bridge clip before Don Norman principles.',
-    type: 'terminal',
-    code: 'bad prompt: build me a landing page\n\nbetter prompt:\n- mobile-first\n- clear affordance for CTA\n- visible signifiers\n- immediate feedback after submit'
+    nav: 'Generated',
+    kicker: 'What AI gives by default',
+    title: 'Generated',
+    body: 'Fast output, low context, repetitive patterns.',
+    note: 'Animate as mechanical, repeated sections.',
+    type: 'generated'
   },
   {
     number: '03',
-    nav: 'Affordance',
-    kicker: 'Norman principle',
-    title: 'Affordance',
-    body: 'A raised "Book a call" button communicates clickability better than plain text in body copy.',
-    note: 'Concrete cue: button depth + contrast signals action.',
-    type: 'affordance'
+    nav: 'Designed',
+    kicker: 'What planning changes',
+    title: 'Designed + Planned',
+    body: 'Intentional hierarchy, constraints, and interaction logic.',
+    note: 'Animate as rhythm, contrast, and structure.',
+    type: 'planned'
   },
   {
     number: '04',
-    nav: 'Signifiers',
-    kicker: 'Norman principle',
-    title: 'Signifiers',
-    body: 'A label like "Primary CTA" plus an arrow cue removes guessing about where to click next.',
-    note: 'Concrete cue: labels + arrows + highlighted target.',
-    type: 'signifiers'
+    nav: 'Norman List',
+    kicker: 'The holy grail',
+    title: "Don Norman's Principles",
+    body: 'Affordance, Signifiers, Constraints, Mapping, Feedback, Conceptual Model',
+    note: 'Use this as your principle index card.',
+    type: 'norman-list'
   },
   {
     number: '05',
+    nav: 'Affordance',
+    kicker: 'Norman principle',
+    title: 'Affordance',
+    body: 'The design should suggest what actions are possible.',
+    note: 'Raised CTA vs plain text example.',
+    type: 'affordance'
+  },
+  {
+    number: '06',
+    nav: 'Signifiers',
+    kicker: 'Norman principle',
+    title: 'Signifiers',
+    body: 'Visible cues should show where and how to act.',
+    note: 'Labels and arrows should reduce guessing.',
+    type: 'signifiers'
+  },
+  {
+    number: '07',
     nav: 'Constraints',
     kicker: 'Norman principle',
     title: 'Constraints',
     body: 'Good design limits wrong actions before mistakes happen.',
-    note: 'Visual: disabled and locked states prevent invalid flow.',
+    note: 'Invalid email and disabled submit pattern.',
     type: 'constraints'
   },
   {
-    number: '06',
+    number: '08',
     nav: 'Mapping',
     kicker: 'Norman principle',
     title: 'Mapping',
-    body: 'When a slider moves right and the card grows, users instantly understand control-to-result mapping.',
-    note: 'Concrete cue: direction of control matches visible outcome.',
+    body: 'Controls should feel naturally connected to outcomes.',
+    note: 'Slider direction should match visible result.',
     type: 'mapping'
   },
   {
-    number: '07',
+    number: '09',
     nav: 'Feedback',
     kicker: 'Norman principle',
     title: 'Feedback',
-    body: 'After submit, show "Uploading..." then "Saved successfully" so users never wonder if action worked.',
-    note: 'Concrete cue: loading state followed by success confirmation.',
+    body: 'The system should immediately show what happened after action.',
+    note: 'Uploading state then success confirmation.',
     type: 'feedback'
   },
   {
-    number: '08',
+    number: '10',
     nav: 'Conceptual Model',
     kicker: 'Norman principle',
     title: 'Conceptual Model',
-    body: 'If users look for "Pricing" but nav says "Monetization matrix," their mental model breaks.',
-    note: 'Concrete cue: use user vocabulary in labels and IA.',
+    body: 'The interface should match how users think it works.',
+    note: 'User vocabulary should match IA labels.',
     type: 'model'
   },
   {
-    number: '09',
-    nav: 'Prompt Formula',
-    kicker: 'Prompting with principles',
-    title: 'Put principles directly in your prompt.',
-    body: 'This is how you turn taste and UX intent into AI-readable instructions.',
-    note: 'Record this clip while reading the formula aloud.',
-    type: 'prompt'
+    number: '11',
+    nav: 'Foundations',
+    kicker: 'Design foundations',
+    title: 'Core Design Foundations',
+    body: 'Hierarchy, Contrast, Alignment, Proximity, White Space, Consistency, Typography, Color, Accessibility, Responsive Design',
+    note: 'List card only, not individual screens.',
+    type: 'foundations-list'
   },
   {
-    number: '10',
-    nav: 'Closing',
-    kicker: 'Your role',
-    title: 'The AI is your teammate. You are the designer.',
-    body: 'Guidelines are not theory here. They are the brief you hand to the model.',
-    note: 'Strong final line before CTA.',
-    type: 'manifesto'
+    number: '12',
+    nav: 'More Standards',
+    kicker: 'UI/UX practice',
+    title: 'And this is only the start.',
+    body: 'UI/UX designers also use many more standards, principles, heuristics, and guideline systems in real product work.',
+    note: 'Bridge line into deeper content / next reel.',
+    type: 'standards-line'
   }
 ];
 
@@ -126,13 +143,60 @@ function renderList() {
 }
 
 function renderType(clip) {
-  if (clip.type === 'terminal') {
+  if (clip.type === 'intro') {
     return `
       <div class="stack">
-        <article class="terminal-card">
+        <article class="terminal-card intro-card">
           <div class="terminal-card-top"><span></span><span></span><span></span></div>
-          <pre>${clip.code}</pre>
+          <div class="intro-lines">
+            <h3>Nuzhat Minhaz</h3>
+            <p>Product @ Apps & Agents Platform Observability</p>
+            <p>Microsoft CoreAI, Developer Division</p>
+          </div>
         </article>
+      </div>
+    `;
+  }
+
+  if (clip.type === 'generated') {
+    return `
+      <div class="stack">
+        <div class="shape-board generated-board">
+          <div class="gen-strip"></div>
+          <div class="gen-strip"></div>
+          <div class="gen-strip"></div>
+          <div class="gen-strip"></div>
+          <div class="gen-strip"></div>
+        </div>
+      </div>
+    `;
+  }
+
+  if (clip.type === 'planned') {
+    return `
+      <div class="stack">
+        <div class="shape-board planned-board">
+          <div class="plan-hero"></div>
+          <div class="plan-grid">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="plan-line"></div>
+        </div>
+      </div>
+    `;
+  }
+
+  if (clip.type === 'norman-list') {
+    return `
+      <div class="stack">
+        <div class="definition-grid">
+          <div class="definition-card"><strong>Affordance</strong><p>possible action</p></div>
+          <div class="definition-card"><strong>Signifiers</strong><p>visible cues</p></div>
+          <div class="definition-card"><strong>Constraints</strong><p>prevent errors</p></div>
+          <div class="definition-card"><strong>Mapping</strong><p>control to result</p></div>
+          <div class="definition-card"><strong>Feedback</strong><p>system response</p></div>
+          <div class="definition-card"><strong>Conceptual Model</strong><p>mental alignment</p></div>
+        </div>
       </div>
     `;
   }
@@ -269,6 +333,40 @@ function renderType(clip) {
             <p class="ui-note">Naming and IA should match user vocabulary.</p>
           </div>
         </div>
+      </div>
+    `;
+  }
+
+  if (clip.type === 'foundations-list') {
+    return `
+      <div class="stack">
+        <div class="terminal-card">
+          <div class="terminal-card-top"><span></span><span></span><span></span></div>
+          <pre>Design foundations:
+- Hierarchy
+- Contrast
+- Alignment
+- Proximity
+- White space
+- Consistency
+- Typography
+- Color
+- Accessibility
+- Responsive design</pre>
+        </div>
+      </div>
+    `;
+  }
+
+  if (clip.type === 'standards-line') {
+    return `
+      <div class="stack">
+        <article class="definition-grid">
+          <div class="definition-card"><strong>Also in practice</strong><p>Heuristics</p></div>
+          <div class="definition-card"><strong>Also in practice</strong><p>Accessibility standards</p></div>
+          <div class="definition-card"><strong>Also in practice</strong><p>Pattern libraries</p></div>
+          <div class="definition-card"><strong>Also in practice</strong><p>Platform guidelines</p></div>
+        </article>
       </div>
     `;
   }
