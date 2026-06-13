@@ -4,7 +4,7 @@ const clips = [
     nav: 'Intro',
     kicker: 'Identity frame',
     title: 'Nuzhat Minhaz',
-    subtitle: 'Product @ Apps & Agents Platform Observability',
+    subtitle: 'Product @ Apps & agents<br>Platform Observability',
     body: 'Microsoft CoreAI, Developer Division',
     note: 'Use as your opening personal credibility card.',
     type: 'intro'
@@ -32,7 +32,7 @@ const clips = [
     nav: 'Norman List',
     kicker: 'The holy grail',
     title: "Don Norman's Principles",
-    body: 'Affordance, Signifiers, Constraints, Mapping, Feedback, Conceptual Model',
+    body: '',
     note: 'Use this as your principle index card.',
     type: 'norman-list'
   },
@@ -95,7 +95,7 @@ const clips = [
     nav: 'Foundations',
     kicker: 'Design foundations',
     title: 'Core Design Foundations',
-    body: 'Hierarchy, Contrast, Alignment, Proximity, White Space, Consistency, Typography, Color, Accessibility, Responsive Design',
+    body: '',
     note: 'List card only, not individual screens.',
     type: 'foundations-list'
   },
@@ -104,9 +104,99 @@ const clips = [
     nav: 'More Standards',
     kicker: 'UI/UX practice',
     title: 'And this is only the start.',
-    body: 'UI/UX designers also use many more standards, principles, heuristics, and guideline systems in real product work.',
+    body: 'building from scratch requires elite ball knowledge of many more standards, principles, heuristics to build systems that are usable and scalable.',
     note: 'Bridge line into deeper content / next reel.',
     type: 'standards-line'
+  },
+  {
+    number: '13',
+    nav: 'User Needs',
+    kicker: 'Poster study',
+    title: 'Start with user needs',
+    note: 'Poster study',
+    type: 'poster',
+    poster: 'user-needs'
+  },
+  {
+    number: '14',
+    nav: 'Do Less',
+    kicker: 'Poster study',
+    title: 'Do less',
+    note: 'Poster study',
+    type: 'poster',
+    poster: 'do-less'
+  },
+  {
+    number: '15',
+    nav: 'Data',
+    kicker: 'Poster study',
+    title: 'Design with data',
+    note: 'Poster study',
+    type: 'poster',
+    poster: 'data'
+  },
+  {
+    number: '16',
+    nav: 'Simple',
+    kicker: 'Poster study',
+    title: 'Make it simple',
+    note: 'Poster study',
+    type: 'poster',
+    poster: 'simple'
+  },
+  {
+    number: '17',
+    nav: 'Iterate',
+    kicker: 'Poster study',
+    title: 'Iterate again',
+    note: 'Poster study',
+    type: 'poster',
+    poster: 'iterate'
+  },
+  {
+    number: '18',
+    nav: 'Everyone',
+    kicker: 'Poster study',
+    title: 'This is for everyone',
+    note: 'Poster study',
+    type: 'poster',
+    poster: 'everyone'
+  },
+  {
+    number: '19',
+    nav: 'Context',
+    kicker: 'Poster study',
+    title: 'Understand context',
+    note: 'Poster study',
+    type: 'poster',
+    poster: 'context'
+  },
+  {
+    number: '20',
+    nav: 'Services',
+    kicker: 'Poster study',
+    title: 'Build digital services',
+    note: 'Poster study',
+    type: 'poster',
+    poster: 'services'
+  },
+  {
+    number: '21',
+    nav: 'Consistent',
+    kicker: 'Poster study',
+    title: 'Be consistent',
+    note: 'Poster study',
+    type: 'poster',
+    poster: 'consistent'
+  },
+  {
+    number: '22',
+    nav: 'Open',
+    kicker: 'Poster study',
+    title: 'Make things open',
+    note: 'Poster study',
+    type: 'poster',
+    poster: 'open'
   }
 ];
 
@@ -142,6 +232,158 @@ function renderList() {
   });
 }
 
+function renderPoster(clip) {
+  if (clip.poster === 'user-needs') {
+    return `
+      <section class="poster poster-user-needs">
+        <div class="poster-user-needs-stack">
+          <div class="poster-pill poster-pill-start">Start</div>
+          <div class="poster-word-stack poster-word-stack-cutout">
+            <span>with</span>
+            <span>user</span>
+            <span>needs</span>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  if (clip.poster === 'do-less') {
+    return `
+      <section class="poster poster-do-less">
+        <div class="poster-check-column">
+          <div class="do-less-icon"><span class="mark-left"></span><span class="mark-right"></span><span class="mark-check"></span></div>
+          <div class="do-less-icon"><span class="mark-left"></span><span class="mark-right"></span><span class="mark-check"></span></div>
+          <div class="do-less-icon"><span class="mark-left"></span><span class="mark-right"></span><span class="mark-check"></span></div>
+          <div class="do-less-icon"><span class="mark-left"></span><span class="mark-right"></span><span class="mark-check"></span></div>
+          <div class="do-less-icon"><span class="mark-left"></span><span class="mark-right"></span><span class="mark-check"></span></div>
+        </div>
+        <div class="poster-do-less-text"><span>Do</span><strong>less</strong></div>
+      </section>
+    `;
+  }
+
+  if (clip.poster === 'data') {
+    return `
+      <section class="poster poster-data">
+        <div class="poster-highlight">Design</div>
+        <div class="poster-line">with</div>
+        <div class="data-word data-zigzag">
+          <span class="data-node node-d">d</span>
+          <span class="data-node node-a1">a</span>
+          <span class="data-node node-t">t</span>
+          <span class="data-node node-a2">a</span>
+          <i class="data-link link-1"></i>
+          <i class="data-link link-2"></i>
+          <i class="data-link link-3"></i>
+        </div>
+      </section>
+    `;
+  }
+
+  if (clip.poster === 'simple') {
+    return `
+      <section class="poster poster-simple">
+        <div class="simple-top">Do the</div>
+        <div class="simple-strike">difficult</div>
+        <div class="simple-strike">complicated</div>
+        <div class="simple-strong">hard work</div>
+        <div class="simple-mid">to make it</div>
+        <div class="simple-accent">simple</div>
+      </section>
+    `;
+  }
+
+  if (clip.poster === 'iterate') {
+    return `
+      <section class="poster poster-iterate">
+        <div class="iterate-stack">
+          <span>Iterate.</span>
+          <span>Iterate.</span>
+          <span>Iterate.</span>
+          <span>Iterate.</span>
+          <span>Iterate.</span>
+          <span>Iterate.</span>
+        </div>
+        <div class="iterate-end">Then<br><em>iterate again</em></div>
+      </section>
+    `;
+  }
+
+  if (clip.poster === 'everyone') {
+    return `
+      <section class="poster poster-everyone">
+        <div class="poster-highlight large">This<br>is for</div>
+        <div class="everyone-grid">
+          <span class="everyone-one one-a">one</span>
+          <span class="everyone-one one-b">one</span>
+          <span class="everyone-one one-c">one</span>
+        </div>
+        <div class="poster-accent-line poster-accent-line-everyone">everyone</div>
+      </section>
+    `;
+  }
+
+  if (clip.poster === 'context') {
+    return `
+      <section class="poster poster-context">
+        <div class="context-top">Under-</div>
+        <div class="context-mid">stand</div>
+        <div class="context-bottom">context</div>
+      </section>
+    `;
+  }
+
+  if (clip.poster === 'services') {
+    return `
+      <section class="poster poster-services">
+        <div class="services-top">Build</div>
+        <div class="services-accent">digital<br>services</div>
+        <div class="services-bottom">not web-<br>sites</div>
+        <svg viewBox="0 0 260 84" class="services-line" aria-hidden="true">
+          <path d="M12 48 C 38 22, 70 68, 98 44 S 150 24, 178 50 S 218 74, 248 46" />
+        </svg>
+      </section>
+    `;
+  }
+
+  if (clip.poster === 'consistent') {
+    return `
+      <section class="poster poster-consistent">
+        <div class="poster-highlight">Be<br>consistent</div>
+        <div class="consistent-mirror"><span>not</span><span>uniform</span></div>
+      </section>
+    `;
+  }
+
+  if (clip.poster === 'open') {
+    return `
+      <section class="poster poster-open">
+        <div class="open-line open-line-top">
+          <span>M</span><span class="block accent"></span><span>ke</span>
+        </div>
+        <div class="open-line">
+          <span>thin</span><span class="block accent tall"></span><span>s</span>
+        </div>
+        <div class="open-line">
+          <span>open;</span>
+        </div>
+        <div class="open-line dark-line">
+          <span>It m</span><span class="block dark"></span><span>kes</span>
+        </div>
+        <div class="open-line dark-line">
+          <span>thin</span><span class="block dark tall"></span><span>s</span>
+        </div>
+        <div class="open-line dark-line">
+          <span>better</span>
+        </div>
+      </section>
+    `;
+  }
+
+  return '';
+}
+
 function renderType(clip) {
   if (clip.type === 'intro') {
     return `
@@ -149,9 +391,8 @@ function renderType(clip) {
         <article class="terminal-card intro-card">
           <div class="terminal-card-top"><span></span><span></span><span></span></div>
           <div class="intro-lines">
-            <h3>Nuzhat Minhaz</h3>
-            <p>Product @ Apps & Agents Platform Observability</p>
-            <p>Microsoft CoreAI, Developer Division</p>
+            <h3>Curent Focus</h3>
+            <p>products that shape how developers ship, monitor, diagnose, and scale responsibly.</p>
           </div>
         </article>
       </div>
@@ -371,72 +612,108 @@ function renderType(clip) {
     `;
   }
 
-  if (clip.type === 'prompt') {
-    return `
-      <div class="stack">
-        <article class="terminal-card">
-          <div class="terminal-card-top"><span></span><span></span><span></span></div>
-          <pre>Build a mobile-first landing page for founders.
-
-Use design principles:
-- Affordance: clickable CTA shapes
-- Signifiers: directional cues
-- Constraints: invalid states blocked
-- Mapping: controls map to outcome
-- Feedback: immediate state response
-- Conceptual model: expected IA labels
-
-No code yet. Return UX plan first.</pre>
-        </article>
-        <div class="prompt-grid">
-          <div class="prompt-chip"><strong>Tell it who</strong><p>Target user + intent</p></div>
-          <div class="prompt-chip"><strong>Tell it what</strong><p>Desired behavior and states</p></div>
-        </div>
-      </div>
-    `;
-  }
-
-  if (clip.type === 'manifesto') {
-    return `
-      <div class="stack">
-        <article class="definition-grid">
-          <div class="definition-card"><strong>Guidelines</strong><p>Not decoration. Direction.</p></div>
-          <div class="definition-card"><strong>Prompt quality</strong><p>Comes from your system thinking.</p></div>
-          <div class="definition-card"><strong>Role</strong><p>Developer as designer + editor.</p></div>
-          <div class="definition-card"><strong>Outcome</strong><p>Less generic. More intentional.</p></div>
-        </article>
-      </div>
-    `;
-  }
-
   return '';
+}
+
+function animatePosterSequence() {
+  const poster = clipViewport.querySelector('.poster');
+  if (!poster) {
+    return;
+  }
+
+  const sequenceSelectors = [
+    '.poster-pill-start',
+    '.poster-word-stack span',
+    '.do-less-icon',
+    '.poster-do-less-text span',
+    '.poster-do-less-text strong',
+    '.poster-highlight',
+    '.poster-line',
+    '.data-node',
+    '.data-link',
+    '.simple-top',
+    '.simple-strike',
+    '.simple-strong',
+    '.simple-mid',
+    '.simple-accent',
+    '.iterate-stack span',
+    '.iterate-end',
+    '.everyone-one',
+    '.poster-accent-line',
+    '.context-top',
+    '.context-mid',
+    '.context-bottom',
+    '.services-top',
+    '.services-accent',
+    '.services-bottom',
+    '.services-line',
+    '.consistent-mirror span',
+    '.open-line'
+  ];
+
+  const orderedElements = [];
+  sequenceSelectors.forEach((selector) => {
+    poster.querySelectorAll(selector).forEach((element) => {
+      orderedElements.push(element);
+    });
+  });
+
+  const uniqueElements = [...new Set(orderedElements)];
+  uniqueElements.forEach((element, index) => {
+    element.animate(
+      [
+        { opacity: 0 },
+        { opacity: 1 }
+      ],
+      {
+        duration: 340,
+        delay: index * 95,
+        easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+        fill: 'both'
+      }
+    );
+  });
 }
 
 function renderClip(index) {
   const clip = clips[index];
 
-  clipViewport.innerHTML = `
-    <article class="clip-scene scene-${clip.type}">
-      <div class="signal-column"></div>
-      <div class="scene-frame">
-        <header class="scene-top">
-          <p class="scene-index">${clip.number}</p>
-          <p class="scene-kicker">${clip.kicker}</p>
-        </header>
+  if (clip.type === 'poster') {
+    clipViewport.innerHTML = `
+      <article class="clip-scene scene-poster scene-${clip.poster}">
+        <div class="scene-frame poster-frame">
+          ${renderPoster(clip)}
+        </div>
+      </article>
+    `;
+  } else {
+    clipViewport.innerHTML = `
+      <article class="clip-scene scene-${clip.type}">
+        <div class="signal-column"></div>
+        <div class="scene-frame">
+          <header class="scene-top">
+            <p class="scene-index">${clip.number}</p>
+            <p class="scene-kicker">${clip.kicker}</p>
+          </header>
 
-        <section class="scene-main">
-          <h2 class="scene-title">${clip.title}</h2>
-          ${clip.subtitle ? `<p class="scene-subtitle">${clip.subtitle}</p>` : ''}
-          ${clip.body ? `<p class="scene-body">${clip.body}</p>` : ''}
-          ${renderType(clip)}
-        </section>
+          <section class="scene-main">
+            <h2 class="scene-title">${clip.title}</h2>
+            ${clip.subtitle ? `<p class="scene-subtitle">${clip.subtitle}</p>` : ''}
+            ${clip.body ? `<p class="scene-body">${clip.body}</p>` : ''}
+            ${renderType(clip)}
+          </section>
 
-        <footer>
-          <p class="scene-footnote">${clip.note}</p>
-        </footer>
-      </div>
-    </article>
-  `;
+          <footer>
+            <p class="scene-footnote">${clip.note}</p>
+          </footer>
+        </div>
+      </article>
+    `;
+  }
+
+  if (clip.type === 'poster') {
+    animatePosterSequence();
+  }
 
   clipCounter.textContent = `${clip.number} / ${String(clips.length).padStart(2, '0')}`;
   clipKicker.textContent = clip.kicker;
